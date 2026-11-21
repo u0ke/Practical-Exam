@@ -1,0 +1,11 @@
+import express from "express";
+const app = express();
+app.use(express.json());
+const films = [
+    { id: 1, title: "The Shawshank Redemption", year: 1994 },
+    { id: 2, title: "The Godfather", year: 1972 },
+    { id: 3, title: "The Dark Knight", year: 2008 }
+];
+
+app.get("/films", (req, res) => {
+    res.statusCode(200).json(films)})
